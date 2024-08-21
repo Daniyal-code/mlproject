@@ -13,6 +13,11 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 # used to create class variables
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
+
+
 # in data ingestion, 
 # inputs req:save - train data, test, raw data
 # these inputs will be created in DataIngestion class
@@ -66,7 +71,13 @@ class DataIngestion:
 
 if __name__== "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    # obj.initiate_data_ingestion()
+    train_data, test_data = obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)
+
+
+
 
     
 
