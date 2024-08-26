@@ -38,7 +38,9 @@ def predict_datapoint():
 
         predict_pipeline = PredictPipeline()
         results= predict_pipeline.predict(pred_df) #once this func is called, first transformation will happen on the given dataframe, then prediction will be returned
+        print(results)
         return render_template('home.html',results = results[0])
+        # 
     # now read this results value to home.html
 
 
